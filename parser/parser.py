@@ -18,7 +18,7 @@ def parser():
             for el in html.select("класс"): # пример .menu и далее .menu-glav || в итоге ".menu .glav"
                 osnov = el.select('класс') # что нужно выводить, также класс, обычно он один. Например .text_a
                 for word in dictionary:
-                    output = re.findall(rf'\b{dictionary}\b', osnov[0].text, flags=re.IGNORECASE)
+                    output = re.findall(rf'\b{word}\b', osnov[0].text, flags=re.IGNORECASE)
                     print (*output) # в случаи удаление строк, которые написаны выше, меняем на osnov[0].text
         except Exception as e: 
             print (f'Ошибка - {e}') 
